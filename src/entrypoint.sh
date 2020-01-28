@@ -3,6 +3,8 @@ set -eu
 
 cd $INPUT_CWD
 echo "Running in $PWD."
+echo "Running DP build 1.1
+
 
 # Set up .netrc file with GitHub credentials
 git_setup() {
@@ -23,8 +25,8 @@ EOF
 
 add() {
     if $INPUT_FORCE 
-    then find $INPUT_PATH -name "$INPUT_PATTERN" -not -path ".git/*" | while read x; do git add -f $x; done
-    else find $INPUT_PATH -name "$INPUT_PATTERN" -not -path ".git/*" | while read x; do git add $x; done
+    then find $INPUT_PATH -name "$INPUT_PATTERN" -not -path "./.git/*" | while read x; do git add -f $x; done
+    else find $INPUT_PATH -name "$INPUT_PATTERN" -not -path "./.git/*" | while read x; do git add $x; done
     fi
 }
 
