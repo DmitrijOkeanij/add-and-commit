@@ -23,8 +23,8 @@ EOF
 
 add() {
     if $INPUT_FORCE 
-    then find $INPUT_PATH -name "$INPUT_PATTERN" | while read x; do git add -f $x; done
-    else find $INPUT_PATH -name "$INPUT_PATTERN" | while read x; do git add $x; done
+    then find $INPUT_PATH -name "$INPUT_PATTERN" -not -path ".git/*" | while read x; do git add -f $x; done
+    else find $INPUT_PATH -name "$INPUT_PATTERN" -not -path ".git/*" | while read x; do git add $x; done
     fi
 }
 
