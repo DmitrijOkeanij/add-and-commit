@@ -3,7 +3,7 @@ set -eu
 
 cd $INPUT_CWD
 echo "Running in $PWD."
-echo "Running DP build 1.1
+echo "Running DP build 1.1"
 
 
 # Set up .netrc file with GitHub credentials
